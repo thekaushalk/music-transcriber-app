@@ -37,8 +37,8 @@ This project can be useful to musicians by providing separate instrument tracks,
 
 - Docker installed **OR**
 - Python 3.11 and requirements in `requirements.txt`
-- MuseScore 3
-- FFmpeg
+- Download MuseScore 3 and add to path
+- Add FFmpeg to path
 
 ### Using Docker (Recommended)
 
@@ -82,18 +82,15 @@ For a drum selection:
 - `drums.pdf` — Musical notation (PDF) of the drum part
 - `no_drums.mp3` — Remaining audio with the drums removed
 
-## Configuration
-
-Environment variables and configuration options can be set in the `.env` file or through Docker environment variable flags.
 
 ## Contributing
 
 Contributions, bug reports, and feature requests are welcome!
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/foo`)
-3. Commit your changes (`git commit -am 'Add some foo'`)
-4. Push to the branch (`git push origin feature/foo`)
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
 5. Open a pull request
 
 ## 📜 Credits & Licensing
