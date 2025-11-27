@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Music Transcriber</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-6">
+  <div class="w-full max-w-2xl bg-white rounded-xl shadow-lg overflow-hidden">
+    <div class="px-6 py-8">
+      <h1 class="text-2xl font-semibold text-gray-800 mb-1">Music Transcriber</h1>
+      <p class="text-sm text-gray-500 mb-6">Upload a track, choose a stem (or All), and get separated stems, MIDI, and PDF notation.</p>
+
+      <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Audio file</label>
+          <input id="fileInput" name="file" type="file" accept=".mp3,.wav,.flac,.ogg" required
+                 class="block w-full text-sm text-gray-700 file:bg-gray-100 file:border file:rounded file:px-3 file:py-2 file:text-sm" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Choose a stem to transcribe</label>
+
+          <div class="grid grid-cols-2 gap-3">
+            <label class="flex items-center space-x-3 p-3 border rounded hover:bg-gray-50">
+              <input type="radio" name="stem" value="bass" required class="h-4 w-4 text-blue-600">
+              <span class="text-sm text-gray-700">Bass</span>
+            </label>
+
+            <label class="flex items-center space-x-3 p-3 border rounded hover:bg-gray-50">
+              <input type="radio" name="stem" value="drums" class="h-4 w-4 text-blue-600">
+              <span class="text-sm text-gray-700">Drums</span>
+            </label>
+
+            <label class="flex items-center space-x-3 p-3 border rounded hover:bg-gray-50">
+              <input type="radio" name="stem" value="piano" class="h-4 w-4 text-blue-600">
+              <span class="text-sm text-gray-700">Piano</span>
+            </label>
+
+            <label class="flex items-center space-x-3 p-3 border rounded hover:bg-gray-50">
+              <input type="radio" name="stem" value="guitar" class="h-4 w-4 text-blue-600">
+              <span class="text-sm text-gray-700">Guitar</span>
+            </label>
+
+            <label class="flex items-center space-x-3 p-3 border rounded hover:bg-gray-50">
+              <input type="radio" name="stem" value="vocals" class="h-4 w-4 text-blue-600">
+              <span class="text-sm text-gray-700">Vocals</span>
+            </label>
+
+            <label class="flex items-center space-x-3 p-3 border rounded hover:bg-gray-50">
+              <input type="radio" name="stem" value="all" class="h-4 w-4 text-blue-600">
+              <span class="text-sm text-gray-700">All Stems</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="pt-2 relative">
+          <button id="submitBtn" type="submit"
+                  class="w-full inline-flex justify-center items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 focus:outline-none">
+            Process
+          </button>
+
+          <div id="spinner" class="hidden absolute right-3 top-1/2 transform -translate-y-1/2">
+            <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div id="processingLabel" class="hidden mt-4 text-center">
+          <div class="flex items-center justify-center space-x-3">
+            <svg class="animate-spin h-5 w-5 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+            </svg>
+            <span class="text-sm text-gray-700 font-medium">Processing</span>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="bg-gray-50 px-6 py-4 text-xs text-gray-500">
+      Tip: Keep the page open while processing. You will be redirected to results automatically when ready.
+    </div>
+  </div>
+
+<script>
+const form = document.getElementById('uploadForm');
+const submitBtn = document.getElementById('submitBtn');
+const spinner = document.getElementById('spinner');
+const processingLabel = document.getElementById('processingLabel');
+
+form.addEventListener('submit', function (e) {
+  // show spinner and "Processing" label, keep synchronous submit
+  spinner.classList.remove('hidden');
+  processingLabel.classList.remove('hidden');
+  submitBtn.disabled = true;
+  // let the browser submit the form; nothing else required
+});
+</script>
+</body>
+</html>

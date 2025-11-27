@@ -1,0 +1,14 @@
+Flask
+Werkzeug
+demucs
+basic-pitch
+numpy
+scipy
+soundfile
+librosa
+pydub
+mido
+requests
+torchcodec
+ffmpeg
+beautifulsoup4
