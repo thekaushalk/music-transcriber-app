@@ -22,14 +22,14 @@ This project can be useful to musicians by providing separate instrument tracks,
 ## Block Diagram
 
 <p align="center">
-  <img width="306" height="606.67" alt="image" src="https://github.com/user-attachments/assets/f1accdea-3cdc-4485-b106-02015e9cba62">
+  <img width="306" height="606.67" alt="image" src="figures/block_diagram.png">
 </p>
 
 ## Demo
 
-<img width="1235" height="827" alt="image" src="https://github.com/user-attachments/assets/fff52ca7-91de-4432-8915-b391c9c54e67" />
-<img width="1734" height="873" alt="image" src="https://github.com/user-attachments/assets/b12fb052-e8ef-4dcb-83bc-26fa94f74198" />
-<img width="1676" height="884" alt="image" src="https://github.com/user-attachments/assets/7461ff3b-75c9-437c-8512-6c0da8992dba" />
+<img width="1235" height="827" alt="image" src="figures/app_screenshot1.png" />
+<img width="1734" height="873" alt="image" src="figures/app_screenshot2.png" />
+<img width="1676" height="884" alt="image" src="figures/app_screenshot3.png" />
 
 ## Getting Started
 
