@@ -59,13 +59,13 @@ The Music Transcriber App follows a clear pipeline:
 
 # Block Diagram
 
-![Block Diagram](paper/figures/block_diagram.png)
+![Block Diagram](/figures/block_diagram.png)
 
 # App Screenshots
 
-![App Screenshot 1](paper/figures/app_screenshot1.png)
-![App Screenshot 2](paper/figures/app_screenshot2.png)
-![App Screenshot 3](paper/figures/app_screenshot3.png)
+![App Screenshot 1](/figures/app_screenshot1.png)
+![App Screenshot 2](/figures/app_screenshot2.png)
+![App Screenshot 3](/figures/app_screenshot3.png)
 
 # References
 
