@@ -22,7 +22,7 @@ This project can be useful to musicians by providing separate instrument tracks,
 ## Block Diagram
 
 <p align="center">
-  <img width="306" height="606.67" alt="image" src="paper/figures/block_diagram.png">
+  <img src="paper/figures/block_diagram.png">
 </p>
 
 ## Demo
